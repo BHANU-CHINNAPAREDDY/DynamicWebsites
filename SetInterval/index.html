@@ -25,8 +25,11 @@
                 <span class="counter-val" id="counterVal">0</span>
             </div>
             <div class="col-12 p-3 mt-3">
-                <button class="btn btn-info" id="setInterval">SetInterval</button>
-                <button class="btn btn-warning" id="clearInterval">ClearInterval</button>
+                <button class="btn btn-info" id="setInterval">Set Interval</button>
+                <button class="btn btn-warning" id="pauseInterval">Pause Interval</button>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-danger" id="clearInterval">Clear Counter</button>
             </div>
         </div>
     </div>
@@ -34,6 +37,7 @@
 
         let counterEl = document.getElementById('counterVal');
         let SetIntervalEl = document.getElementById("setInterval");
+        let pauseIntervalEl =document.getElementById('pauseInterval');
         let ClearIntervalEl = document.getElementById("clearInterval");
         
         function counterIncrement(){
@@ -46,8 +50,11 @@
         SetIntervalEl. onclick = function(){
             uniqueId= setInterval(counterIncrement, 1000);
         }
-        ClearIntervalEl.onclick = function(){
+        pauseIntervalEl.onclick = function(){
             clearInterval(uniqueId);
+        }
+        ClearIntervalEl.onclick = function(){
+            counterEl.textContent = 0;
         }
     </script>
 </body>
